@@ -1,0 +1,15 @@
+--- configure.ac	2024-04-09 16:33:01.722592268 +0200
++++ configure.ac.new	2024-04-09 16:38:12.545828895 +0200
+@@ -61,9 +61,10 @@
+ # Checks for programs
+ #
+ AC_PROG_CC
+-AC_PROG_CC_C99
++# AC_PROG_CC_C99
+ AM_PROG_CC_C_O
+-AC_PROG_LIBTOOL
++# AC_PROG_LIBTOOL
++LT_INIT
+ 
+ PKG_PROG_PKG_CONFIG
+ 
