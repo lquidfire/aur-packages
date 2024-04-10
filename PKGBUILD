@@ -2,7 +2,7 @@
 
 pkgname=openarc
 pkgver=1.0.0.Beta3
-pkgrel=1
+pkgrel=2
 _commit=eb430dbdeee9f502295fe7a7d5041dfca3f00745
 pkgdesc="Open source implementation of the ARC email authentication system."
 arch=(x86_64)
@@ -17,7 +17,7 @@ source=("git+https://github.com/trusteddomainproject/OpenARC.git#commit=${_commi
         openarc.sysusers
         openarc.tmpfiles)
 sha256sums=('51fe59502f4428e5516b31ef1e63f33bddc5b4fb9d0c7752a212ec1918b18145'
-            'dda69f98867ef8cad8d67aad1db83c86143de02fdafb84ef207c5cb54d982690'
+            '29f58f63c6e683b385c1b11669055058ef2b0e6d747de9a8000983112c6f8a55'
             '14c3cce4d0b78b34c79eb3f50e6b48c9fa5aa2def11593b537190dfa46ed9536'
             '31c399c0e3a69bb845b033ab5c0ad92d44cacb0fd58e0113cd1901e75900515e'
             'db0f857ca6b3ef8e7210dc18b051dde26540e7ce70f611d72e2a16e6d2d71d3e')
