@@ -13,12 +13,15 @@ makedepends=('libxslt')
 optdepends=('perl-tk: for ClickToFocus support'
             'perl-x11-protocol: for ClickToFocus support')
 options=('buildflags' '!emptydirs' '!makeflags')
-source=(https://github.com/fvwmorg/fvwm/releases/download/${pkgver}/fvwm-${pkgver}.tar.gz fvwm.desktop)
+source=(https://github.com/fvwmorg/fvwm/releases/download/${pkgver}/fvwm-${pkgver}.tar.gz
+	fvwm.desktop)
 sha256sums=('66826dd60b774447170037d9078fd43e75f7230a49acfb84a988eebce7e3418b'
             '51d345f995f57c6d881d48bf535f71d75041a9bf1f0fa41dd99e1b22fd66aaf3')
 
 build() {
   cd ${pkgname}-${pkgver}
+  # 2 CFLAGS Wno-error were added to allow building FVWM with GCC 14.1+.
+  # Cf.: https://bbs.archlinux.org/viewtopic.php?pid=2170711
   CFLAGS="$CFLAGS -Wno-error=int-conversion -Wno-error=incompatible-pointer-types" ./configure --prefix=/usr --sysconfdir=/etc --libexecdir=/usr/lib --with-stroke-library --enable-mandoc
   make
 }
