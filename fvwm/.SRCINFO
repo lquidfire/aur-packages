@@ -1,7 +1,7 @@
 pkgbase = fvwm
 	pkgdesc = Fvwm2 - a virtual window manager. Only gets serious bugfixes. New version is Fvwm3.
 	pkgver = 2.7.0
-	pkgrel = 3
+	pkgrel = 4
 	url = http://www.fvwm.org
 	arch = x86_64
 	license = GPL-2.0-only

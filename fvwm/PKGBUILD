@@ -3,7 +3,7 @@
 
 pkgname=fvwm
 pkgver=2.7.0
-pkgrel=3
+pkgrel=4
 pkgdesc="Fvwm2 - a virtual window manager. Only gets serious bugfixes. New version is Fvwm3."
 arch=('x86_64')
 url="http://www.fvwm.org"
