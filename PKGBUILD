@@ -5,14 +5,14 @@
 # Test if login works: https://iamapps.belgium.be/tma/
 
 pkgname=eid-mw
-pkgver=5.1.16
+pkgver=5.1.18
 pkgrel=1
 pkgdesc="The Belgian e-ID (electronic identity card) viewer and Firefox extension"
 arch=("x86_64")
 url="https://eid.belgium.be/"
-license=("LGPL3")
+license=("LGPL-3.0-only")
 depends=("gtk3" "libproxy" "curl" "libbsd")
-makedepends=("pcsclite")
+makedepends=("autoconf-archive" "pcsclite")
 optdepends=(
     "firefox: Extension for Belgian eid"
     "acsccid: ACS CCID smart card readers"
@@ -23,7 +23,7 @@ source=(
     "https://dist.eid.belgium.be/continuous/sources/$pkgname-$pkgver-v$pkgver.tar.gz"
     "https://dist.eid.belgium.be/continuous/sources/$pkgname-$pkgver-v$pkgver.tar.gz.asc"
 )
-sha256sums=('110f8ef95088f14dc9fc3465d8822f0fd78ed02ddb82959814d74e0ce8631dcc'
+sha256sums=('677ab121643a722b6b8c148433b6c9b5f5312d177296c6a1282117bb7abf54bd'
             'SKIP')
 validpgpkeys=("D95426E309C0492990D8E8E2824A5E0010A04D46")
 
@@ -56,10 +56,16 @@ validpgpkeys=("D95426E309C0492990D8E8E2824A5E0010A04D46")
 #
 # [...]
 
+prepare() {
+    # This should be removed after v5.1.18. Only to re-configure after xz-issues.
+    cd "${pkgname}-${pkgver}-v${pkgver}"
+    NOCONFIGURE=1 autoreconf -vfi
+}
+
 build() {
     cd "$pkgname-$pkgver-v$pkgver"
     sed -i "s/c_rehash/openssl rehash/g" plugins_tools/eid-viewer/Makefile.in
-    ./configure --prefix=/usr --libexecdir=/usr/bin --sysconfdir=/etc
+    SSL_PREFIX=/usr ./configure --prefix=/usr --libexecdir=/usr/bin --sysconfdir=/etc
     make
 }
 
