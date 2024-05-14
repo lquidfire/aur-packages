@@ -1,4 +1,5 @@
-# Maintainer: Jerome Leclanche <jerome@leclan.ch>
+# Maintainer: Edmund Lodewijks <e.lodewijks@gmail.com>
+# Contributor: Jerome Leclanche <jerome@leclan.ch>
 # Previous contributors:
 # William Gathoye, Emil Vanherp, Alad Wenter, Xavier D., Valere Monseur
 # Troubleshooting: https://eid.belgium.be/en/faq/google-chromechromium-how-do-i-log
@@ -6,7 +7,7 @@
 
 pkgname=eid-mw
 pkgver=5.1.18
-pkgrel=1
+pkgrel=2
 pkgdesc="The Belgian e-ID (electronic identity card) viewer and Firefox extension"
 arch=("x86_64")
 url="https://eid.belgium.be/"
@@ -56,11 +57,11 @@ validpgpkeys=("D95426E309C0492990D8E8E2824A5E0010A04D46")
 #
 # [...]
 
-prepare() {
-    # This should be removed after v5.1.18. Only to re-configure after xz-issues.
-    cd "${pkgname}-${pkgver}-v${pkgver}"
-    NOCONFIGURE=1 autoreconf -vfi
-}
+#prepare() {
+#    # This should be removed after v5.1.18. Only to re-configure after xz-issues.
+#    cd "${pkgname}-${pkgver}-v${pkgver}"
+#    NOCONFIGURE=1 autoreconf -vfi
+#}
 
 build() {
     cd "$pkgname-$pkgver-v$pkgver"
