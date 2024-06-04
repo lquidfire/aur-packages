@@ -6,7 +6,7 @@
 
 pkgname=solfege
 pkgver=3.23.4
-pkgrel=9
+pkgrel=10
 pkgdesc="Music education and ear training software"
 arch=('x86_64')
 url="https://www.gnu.org/software/solfege/"
@@ -17,6 +17,8 @@ makedepends=('docbook-xsl' 'ghostscript' 'itstool' 'lilypond' 'swig' 'texinfo' '
 optdepends=('csound: Generate example sounds'
             'timidity++: MIDI playback'
             'fluidsynth: real-time software synthesizer based on the SoundFont 2 specifications (MIDI playback)'
+            'mma: Musical MIDI Accompaniment generator'
+            'alsa-utils: for aplay'
             'mpg123: Mp3 playback'
             'vorbis-tools: Ogg playback'
             'lilypond: Generate print-outs and score sheets'
