@@ -1,7 +1,7 @@
 pkgbase = solfege
 	pkgdesc = Music education and ear training software
 	pkgver = 3.23.4
-	pkgrel = 9
+	pkgrel = 10
 	url = https://www.gnu.org/software/solfege/
 	install = solfege.install
 	arch = x86_64
@@ -23,6 +23,8 @@ pkgbase = solfege
 	optdepends = csound: Generate example sounds
 	optdepends = timidity++: MIDI playback
 	optdepends = fluidsynth: real-time software synthesizer based on the SoundFont 2 specifications (MIDI playback)
+	optdepends = mma: Musical MIDI Accompaniment generator
+	optdepends = alsa-utils: for aplay
 	optdepends = mpg123: Mp3 playback
 	optdepends = vorbis-tools: Ogg playback
 	optdepends = lilypond: Generate print-outs and score sheets
