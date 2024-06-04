@@ -1,17 +1,18 @@
-# Maintainer: David Runge <dvzrv@archlinux.org>
+# Maintainer: Edmund Lodewijks <e.lodewijks@gmail.com>
+# Contributor: David Runge <dvzrv@archlinux.org>
 # Contributor: Ray Rashif <schiv@archlinux.org>
 # Contributor: Corrado Primier <bardo@aur.archlinux.org>
 # Contributor: sickhate <sickhate@tux-linux.net>
 
 pkgname=solfege
 pkgver=3.23.4
-pkgrel=7
+pkgrel=8
 pkgdesc="Music education and ear training software"
 arch=('x86_64')
 url="https://www.gnu.org/software/solfege/"
-license=('GPL3')
+license=('GPL-3.0-only')
 groups=('pro-audio')
-depends=('gtk3' 'python-cairo' 'python-gobject')
+depends=('gtk3' 'python-cairo' 'python-gobject' 'bash' 'pango' 'gdk-pixbuf2')
 makedepends=('docbook-xsl' 'ghostscript' 'itstool' 'lilypond' 'swig' 'texinfo' 'txt2man')
 optdepends=('csound: Generate example sounds'
             'timidity++: MIDI playback'
