@@ -2,7 +2,7 @@
 
 pkgname=openarc
 pkgver=1.0.0.Beta3
-pkgrel=4
+pkgrel=5
 _commit=eb430dbdeee9f502295fe7a7d5041dfca3f00745
 pkgdesc="Open source implementation of the ARC email authentication system."
 arch=(x86_64)
@@ -14,11 +14,15 @@ optdepends=('smtp-server: for using a local mail server'
 makedepends=('libmilter' 'git')
 source=("git+https://github.com/trusteddomainproject/OpenARC.git#commit=${_commit}"
         configure.ac.patch
+	openarc-headerdebug.patch
+	0001-Remove-t-from-the-list-of-required-AS-tags.patch
         openarc.service
         openarc.sysusers
         openarc.tmpfiles)
 sha256sums=('51fe59502f4428e5516b31ef1e63f33bddc5b4fb9d0c7752a212ec1918b18145'
-            '3df10339f7f83a9b4449ee13aaeb23f78f6ba75a49d363f80f2f757d0540b6d2'
+            '21f6bacae998c8d206ffcd59d9b2c91c8596b1f908cf074df3941ae0134f39ca'
+            '484dd6330972edd903c9a6f65ec044b886afbe92606a43b29347c3198cc4b0ec'
+            '7a41b393aa02adb9f258fde0ec55a0a968fb5453d2803a36f083944d9b3f539c'
             '14c3cce4d0b78b34c79eb3f50e6b48c9fa5aa2def11593b537190dfa46ed9536'
             '31c399c0e3a69bb845b033ab5c0ad92d44cacb0fd58e0113cd1901e75900515e'
             'db0f857ca6b3ef8e7210dc18b051dde26540e7ce70f611d72e2a16e6d2d71d3e')
@@ -27,6 +31,8 @@ validpgpkeys=(5CDD574C22FF4D2480ACABDF5254B96BC608B511) # The OpenDKIM Project <
 prepare() {
   cd "$srcdir/OpenARC"
   patch -p0 -i "$srcdir"/configure.ac.patch
+  patch -p0 -i "$srcdir"/0001-Remove-t-from-the-list-of-required-AS-tags.patch
+  patch -p0 -i "$srcdir"/openarc-headerdebug.patch
   autoreconf -i
 }
 
