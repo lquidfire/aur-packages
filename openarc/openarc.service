@@ -6,7 +6,7 @@ After=network.target remote-fs.target nss-lookup.target
 Type=forking
 User=openarc
 Group=openarc
-ExecStart=/usr/bin/openarc -x /etc/openarc/openarc.conf
+ExecStart=/usr/bin/openarc -c /etc/openarc/openarc.conf
 RuntimeDirectory=openarc
 RuntimeDirectoryMode=0750
 

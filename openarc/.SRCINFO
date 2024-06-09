@@ -1,7 +1,7 @@
 pkgbase = openarc
 	pkgdesc = Open source implementation of the ARC email authentication system.
 	pkgver = 1.0.0.Beta3
-	pkgrel = 5
+	pkgrel = 6
 	url = https://github.com/trusteddomainproject/OpenARC
 	arch = x86_64
 	license = BSD-2-Clause
@@ -27,7 +27,7 @@ pkgbase = openarc
 	sha256sums = 21f6bacae998c8d206ffcd59d9b2c91c8596b1f908cf074df3941ae0134f39ca
 	sha256sums = 484dd6330972edd903c9a6f65ec044b886afbe92606a43b29347c3198cc4b0ec
 	sha256sums = 7a41b393aa02adb9f258fde0ec55a0a968fb5453d2803a36f083944d9b3f539c
-	sha256sums = 14c3cce4d0b78b34c79eb3f50e6b48c9fa5aa2def11593b537190dfa46ed9536
+	sha256sums = 7660cf9b2704eb168c0405bb4e00f7c2966f254401c3372dc7f626d3a522c802
 	sha256sums = 31c399c0e3a69bb845b033ab5c0ad92d44cacb0fd58e0113cd1901e75900515e
 	sha256sums = db0f857ca6b3ef8e7210dc18b051dde26540e7ce70f611d72e2a16e6d2d71d3e
 
