@@ -4,12 +4,16 @@ After=network.target remote-fs.target nss-lookup.target
 
 [Service]
 Type=forking
-User=openarc
-Group=openarc
-ExecStart=/usr/bin/openarc -c /etc/openarc/openarc.conf
 RuntimeDirectory=openarc
 RuntimeDirectoryMode=0750
+ExecStart=/usr/sbin/openarc -f $OPTIONS
+ExecReload=/bin/kill -USR1 $MAINPID
+Restart=on-failure
+User=openarc
+Group=openarc
+UMask=0007
+ProtectSystem=strict
+ProtectHome=true
 
 [Install]
 WantedBy=multi-user.target
-
