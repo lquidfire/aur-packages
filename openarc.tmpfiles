@@ -1,4 +1,3 @@
-d /etc/openarc 0700 openarc openarc - -
-d /etc/openarc/keys 0700 openarc openarc - -
-d /run/openarc 0700 openarc openarc - -
-d /var/lib/openarc 0700 openarc openarc - -
+d /etc/openarc 0750 openarc openarc -
+d /etc/openarc/keys 0750 openarc openarc -
+D /run/openarc 0750 openarc openarc -
