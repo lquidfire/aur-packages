@@ -3,10 +3,14 @@ Description=OpenARC daemon
 After=network.target remote-fs.target nss-lookup.target
 
 [Service]
-Type=forking
+Type=simple
 RuntimeDirectory=openarc
 RuntimeDirectoryMode=0750
-ExecStart=/usr/sbin/openarc -f $OPTIONS
+StateDirectory=openarc
+StateDirectoryMode=0750
+ConfigurationDirectory=openarc
+ConfigurationDirectoryMode=0750
+ExecStart=/usr/bin/openarc -f $OPTIONS
 ExecReload=/bin/kill -USR1 $MAINPID
 Restart=on-failure
 User=openarc
