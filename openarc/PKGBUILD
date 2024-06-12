@@ -46,7 +46,6 @@ build() {
      --sbindir=/usr/bin \
      --sysconfdir="/etc/$pkgname" \
      --localstatedir=/var \
-     --with-privsep-user=openarc
   make
 }
 
@@ -65,7 +64,7 @@ package() {
   install -Dm644 "$srcdir/openarc.tmpfiles" "$pkgdir/usr/lib/tmpfiles.d/$pkgname.conf"
   install -Dm644 "$srcdir/$pkgname.service" "$pkgdir/usr/lib/systemd/system/$pkgname.service"
 
-  # License
+  # license
   mkdir -p "$pkgdir/usr/share/licenses/$pkgname"
   for f in LICENSE LICENSE.Sendmail; do
     ln -s ../../doc/$pkgname/$f "$pkgdir/usr/share/licenses/$pkgname/$f"
