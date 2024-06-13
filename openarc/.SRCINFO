@@ -1,7 +1,7 @@
 pkgbase = openarc
 	pkgdesc = Open source implementation of the ARC email authentication system.
 	pkgver = 1.0.0.Beta3
-	pkgrel = 9
+	pkgrel = 10
 	url = https://github.com/trusteddomainproject/OpenARC
 	arch = x86_64
 	license = BSD-2-Clause
