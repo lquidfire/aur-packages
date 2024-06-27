@@ -10,7 +10,8 @@ pkgdesc="Command-line tool to typeset Gregorian chant"
 url=https://gregorio-project.github.io
 arch=("i686" "x86_64")
 license=("GPL-3.0-only" "OFL-1.0" "GPL-3.0-only WITH Font-exception-2.0")
-depends=("texlive-core" "texlive-fontsextra" "texlive-bin" "texlive-formatsextra" "texlive-latexextra")
+depends=("texlive-core" "texlive-bin" "texlive-formatsextra" "texlive-latexextra")
+optdepends=("texlive-fontsextra: install a whole lot of extra fonts for TeX")
 conflicts=("gregorio-svn" "gregorio-git" "gregoriotex")
 provides=("gregorio")
 source=("https://github.com/gregorio-project/gregorio/releases/download/v$pkgver/gregorio-$pkgver.tar.bz2"
@@ -25,7 +26,7 @@ prepare() {
   echo "Configuring..."
   cd "$srcdir/$pkgbase/"
   autoreconf -f -i
-  ./configure --prefix=/usr/bin || return 1
+  ./configure --prefix=/usr || return 1
 }
 
 build() {
