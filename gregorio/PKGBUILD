@@ -1,0 +1,49 @@
+# Maintainer: Edmund Lodewijks <e. lodewijks @ gmail dot com>
+# Contributor: Anthony VanBerkum <anthonyvbop AT gmail DOT com>
+# Contributor: Laércio de Sousa <lbsousajr AT gmail DOT com>
+# Contributor: David Gippner davidgippner at googlemail dot com
+pkgname=gregorio
+pkgver=6.0.0
+pkgrel=2
+_pkgver_underscores=$(echo $pkgver | sed -e 's/\./_/g')
+pkgdesc="Command-line tool to typeset Gregorian chant"
+url=https://gregorio-project.github.io
+arch=("i686" "x86_64")
+license=("GPL-3.0-only" "OFL-1.0" "GPL-3.0-only WITH Font-exception-2.0")
+depends=("texlive-core" "texlive-fontsextra" "texlive-bin" "texlive-formatsextra" "texlive-latexextra")
+conflicts=("gregorio-svn" "gregorio-git" "gregoriotex")
+provides=("gregorio")
+source=("https://github.com/gregorio-project/gregorio/releases/download/v$pkgver/gregorio-$pkgver.tar.bz2"
+        "https://github.com/gregorio-project/gregorio/releases/download/v$pkgver/supp_fonts-$_pkgver_underscores.zip")
+sha256sums=("e2a3da9cb760cfd3bd152440bbd40c1776be430de8f421dc21cee70ae48a63b2"
+            "22d3c890c32f2e4e4be35b8245f5a2772dd05a6954f08c3c9b02a8002142e07f")
+
+
+prepare() {
+  # Standardise src dir name without using a private variable.
+  mv "$srcdir/$pkgbase-$pkgver/" "$srcdir/$pkgbase/"
+  echo "Configuring..."
+  cd "$srcdir/$pkgbase/"
+  autoreconf -f -i
+  ./configure --prefix=/usr/bin || return 1
+}
+
+build() {
+  echo "Compiling gregorio..."
+  cd "$srcdir/$pkgbase/"
+  make || return 1
+}
+
+package() {
+  cd "$srcdir/$pkgbase/"
+  echo "Installing gregorio..."
+  make DESTDIR="$pkgdir/" install || return 1
+  echo "Installing TeX files..."
+  cd "$srcdir/$pkgbase/"
+  ./install-gtex.sh dir:$pkgdir/usr/share/texmf || return 1
+  echo "Installing fonts..."
+  cd "$srcdir/"
+  texlua install_supp_fonts.lua $pkgdir/usr/share/texmf || return 1
+
+## Install Font licenses (OFL and GPL with FE)
+}
