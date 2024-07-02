@@ -1,0 +1,10 @@
+--- solfege-3.23.4/solfege/soundcard/macro_to_function.c	2016-06-24 21:55:37.000000000 +0200
++++ solfege-3.23.4/solfege/soundcard/macro_to_function.c.new	2024-07-02 22:08:53.649499122 +0200
+@@ -18,6 +18,7 @@
+  */
+ 
+ /*#define be_verbose 1*/
++#include <sys/cdefs.h>
+ #include "../../config.h"
+ #include <sys/soundcard.h>
+ #include <fcntl.h>
