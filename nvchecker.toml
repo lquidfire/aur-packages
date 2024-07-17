@@ -1,0 +1,61 @@
+[__config__]
+oldver = "old_ver.json"
+newver = "new_ver.json"
+keyfile = "keys.toml"
+
+
+
+[eid-mw]
+source = "regex"
+regex = "[\\d.]+\\.\\d*"
+url = "https://dist.eid.belgium.be/continuous/sources"
+
+[fvwm]
+source = "github"
+github = "fvwmorg/fvwm"
+use_latest_release = true
+
+[gnubg]
+source = "regex"
+regex = "gnubg-release-([\\d.]+\\.\\d+)-sources.tar.gz."
+url = "https://www.gnu.org/software/gnubg/"
+
+[gnucobol]
+source = "regex"
+regex = "The current release, version [\\d.]+\\.\\d+"
+url = "https://gnucobol.sourceforge.io/"
+
+[gregorio]
+source = "github"
+github = "gregorio-project/gregorio"
+use_latest_release = true
+
+[libcs50]
+source = "github"
+github = "cs50/libcs50"
+use_latest_release = true
+
+[libcs50-git]
+source = "github"
+github = "cs50/libcs50"
+
+[openbgpd]
+source = "github"
+github = "openbgpd-portable/openbgpd-portable"
+use_latest_tag = true
+
+[solfege]
+source = "regex"
+regex = "([\\d.]+\\.\\d+).tar.gz"
+#url = "https://sourceforge.net/projects/solfege/files/solfege-unstable/"
+url = "https://sourceforge.net/projects/solfege/rss?path=/solfege-unstable"
+
+[spleen-font]
+source = "github"
+github = "fcambus/spleen"
+use_latest_release = true
+
+[usb_resetter]
+source = "github"
+github = "netinvent/usb_resetter"
+use_latest_release = true
