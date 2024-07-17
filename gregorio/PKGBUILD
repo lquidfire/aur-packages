@@ -9,42 +9,48 @@ _pkgver_underscores=$(echo $pkgver | sed -e 's/\./_/g')
 pkgdesc="Command-line tool to typeset Gregorian chant"
 url=https://gregorio-project.github.io
 arch=("i686" "x86_64")
-license=("GPL-3.0-only" "OFL-1.0" "GPL-3.0-only WITH Font-exception-2.0")
-depends=("texlive-core" "texlive-bin" "texlive-formatsextra" "texlive-latexextra")
-optdepends=("texlive-fontsextra: install a whole lot of extra fonts for TeX")
+license=("GPL-3.0-only" "OFL-1.1" "GPL-3.0-only WITH Font-exception-2.0")
+depends=("python" "texlive-core" "texlive-fontsextra" "texlive-bin" "texlive-formatsextra" "texlive-latexextra")
 conflicts=("gregorio-svn" "gregorio-git" "gregoriotex")
 provides=("gregorio")
+#install=gregorio.install
 source=("https://github.com/gregorio-project/gregorio/releases/download/v$pkgver/gregorio-$pkgver.tar.bz2"
-        "https://github.com/gregorio-project/gregorio/releases/download/v$pkgver/supp_fonts-$_pkgver_underscores.zip")
-sha256sums=("e2a3da9cb760cfd3bd152440bbd40c1776be430de8f421dc21cee70ae48a63b2"
-            "22d3c890c32f2e4e4be35b8245f5a2772dd05a6954f08c3c9b02a8002142e07f")
-
+        "https://github.com/gregorio-project/gregorio/releases/download/v$pkgver/supp_fonts-$_pkgver_underscores.zip"
+	"https://openfontlicense.org/documents/OFL.txt"
+	"Font-Exception-2.0")
+sha256sums=('e2a3da9cb760cfd3bd152440bbd40c1776be430de8f421dc21cee70ae48a63b2'
+            '22d3c890c32f2e4e4be35b8245f5a2772dd05a6954f08c3c9b02a8002142e07f'
+            '1d361a8f8e8ce6e68457dcd93fb56e162e6baa3bbb7e7573a290d44399f6b57e'
+            '000c7fc2d306b8f74db81d1b44ce9a96da4c1674185714cbe4e9d6b82db45aa7')
 
 prepare() {
-  # Standardise src dir name without using a private variable.
-  mv "$srcdir/$pkgbase-$pkgver/" "$srcdir/$pkgbase/"
   echo "Configuring..."
-  cd "$srcdir/$pkgbase/"
+  cd "$srcdir/$pkgname-$pkgver/"
   autoreconf -f -i
   ./configure --prefix=/usr || return 1
 }
 
 build() {
   echo "Compiling gregorio..."
-  cd "$srcdir/$pkgbase/"
-  make || return 1
+  cd "$srcdir/$pkgname-$pkgver/"
+  PYTHONWARNINGS=ignore make || return 1
 }
 
 package() {
-  cd "$srcdir/$pkgbase/"
+  cd "$srcdir/$pkgname-$pkgver/"
   echo "Installing gregorio..."
   make DESTDIR="$pkgdir/" install || return 1
   echo "Installing TeX files..."
-  cd "$srcdir/$pkgbase/"
+  #cd "$srcdir/$pkgname-$pkgver/"
   ./install-gtex.sh dir:$pkgdir/usr/share/texmf || return 1
   echo "Installing fonts..."
   cd "$srcdir/"
   texlua install_supp_fonts.lua $pkgdir/usr/share/texmf || return 1
+  cd "$srcdir/$pkgname-$pkgver/fonts/"
+  install -Dm644 fonts_README.md "$pkgdir/usr/share/doc/$pkgname"
 
-## Install Font licenses (OFL and GPL with FE)
+  ## Install Font licenses (OFL and GPL with FE)
+  cd "$srcdir/"
+  install -Dm644 OFL.txt "$pkgdir/usr/share/licenses/$pkgname/OFL-1.1"
+  install -Dm644 "Font-Exception-2.0" "$pkgdir/usr/share/licenses/$pkgname"
 }
