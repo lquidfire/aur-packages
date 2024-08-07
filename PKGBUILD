@@ -1,27 +1,35 @@
 # Contributor: Thomas Dziedzic < gostrc at gmail >
 # Contributor: Michael Eckert <michael.eckert@linuxmail.org>
 
+# Uncomment to enable Python 2 bindings
+#_with_python2=1
+
 pkgname=deltarpm
-pkgver=3.6.3
+pkgver=3.6.4
 pkgrel=1
 pkgdesc="Create deltas between rpms"
 arch=('i686' 'x86_64')
-license=('custom:BSD')
+license=('BSD-3-Clause')
 url="https://github.com/rpm-software-management/$pkgname"
 depends=('rpm-tools' 'zlib' 'zstd>=1.3.8')
-makedepends=('python2' 'python')
+makedepends=('python')
+((_with_python2)) && makedepends+=('python2')
 optdepends=('perl: for drpmsync command'
-            'python2: for python2 module'
             'python: for python3 module')
+((_with_python2)) && optdepends+=('python2: for python2 module')
 source=("$url/archive/$pkgver/$pkgname-$pkgver.tar.gz")
-sha256sums=('5a24a92baa9c4b6c650f02fe8addd2002f3afde3fd5bd526d9988cf6ecdb682b')
+sha256sums=('5b2cf07ac55397f18662a57419ecf850f938f7359db590cc0905fa98237f0eb7')
+
+PYTHONS='python'
+((_with_python2)) && PYTHONS+=' python2'
 
 build() {
 	cd "$pkgname-$pkgver"
+
 	make CPPFLAGS="$CPPFLAGS"     \
 	     CFLAGS="$CFLAGS -fPIC -DWITH_ZSTD=1" \
 	     LDFLAGS="$LDFLAGS"       \
-	     PYTHONS='python2 python' \
+	     PYTHONS="$PYTHONS"       \
 	     prefix=/usr              \
 	     zlibbundled=''           \
 	     zlibldflags='-lz'        \
@@ -33,7 +41,7 @@ package() {
 	cd "$pkgname-$pkgver"
 
 	make DESTDIR="$pkgdir/"       \
-	     PYTHONS='python2 python' \
+	     PYTHONS="$PYTHONS"       \
 	     prefix=/usr              \
 	     mandir=/usr/share/man    \
 	     install
