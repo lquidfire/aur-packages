@@ -5,7 +5,7 @@
 #_with_python2=1
 
 pkgname=deltarpm
-pkgver=3.6.4
+pkgver=3.6.5
 pkgrel=1
 pkgdesc="Create deltas between rpms"
 arch=('i686' 'x86_64')
@@ -18,7 +18,7 @@ optdepends=('perl: for drpmsync command'
             'python: for python3 module')
 ((_with_python2)) && optdepends+=('python2: for python2 module')
 source=("$url/archive/$pkgver/$pkgname-$pkgver.tar.gz")
-sha256sums=('5b2cf07ac55397f18662a57419ecf850f938f7359db590cc0905fa98237f0eb7')
+sha256sums=('f3fba9b96c55be21696466bbfc3b2a623a4fb35646ff9a135f5c29406b412f22')
 
 PYTHONS='python'
 ((_with_python2)) && PYTHONS+=' python2'

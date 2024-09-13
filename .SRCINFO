@@ -1,6 +1,6 @@
 pkgbase = deltarpm
 	pkgdesc = Create deltas between rpms
-	pkgver = 3.6.4
+	pkgver = 3.6.5
 	pkgrel = 1
 	url = https://github.com/rpm-software-management/deltarpm
 	arch = i686
@@ -12,7 +12,7 @@ pkgbase = deltarpm
 	depends = zstd>=1.3.8
 	optdepends = perl: for drpmsync command
 	optdepends = python: for python3 module
-	source = https://github.com/rpm-software-management/deltarpm/archive/3.6.4/deltarpm-3.6.4.tar.gz
-	sha256sums = 5b2cf07ac55397f18662a57419ecf850f938f7359db590cc0905fa98237f0eb7
+	source = https://github.com/rpm-software-management/deltarpm/archive/3.6.5/deltarpm-3.6.5.tar.gz
+	sha256sums = f3fba9b96c55be21696466bbfc3b2a623a4fb35646ff9a135f5c29406b412f22
 
 pkgname = deltarpm
