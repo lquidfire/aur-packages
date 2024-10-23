@@ -2,7 +2,7 @@
 
 pkgname=openarc
 pkgver=1.0.0.Beta3
-pkgrel=10
+pkgrel=11
 _commit=eb430dbdeee9f502295fe7a7d5041dfca3f00745
 pkgdesc="Open source implementation of the ARC email authentication system."
 arch=(x86_64)
@@ -45,7 +45,8 @@ build() {
      --prefix=/usr \
      --sbindir=/usr/bin \
      --sysconfdir="/etc/$pkgname" \
-     --localstatedir=/var
+     --localstatedir=/var \
+     --disable-static
   make
 }
 
