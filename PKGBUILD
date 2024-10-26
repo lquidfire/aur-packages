@@ -2,7 +2,7 @@
 
 pkgname=openarc
 pkgver=1.0.0.Beta3
-pkgrel=11
+pkgrel=12
 _commit=eb430dbdeee9f502295fe7a7d5041dfca3f00745
 pkgdesc="Open source implementation of the ARC email authentication system."
 arch=(x86_64)
@@ -12,6 +12,7 @@ depends=('sh' 'glibc' 'jansson' 'openssl' 'libbsd')
 optdepends=('smtp-server: for using a local mail server'
 	    'bind: required only for signature verification (alternatives available)')
 makedepends=('libmilter' 'git')
+backup=('etc/openarc/openarc.conf')
 source=("git+https://github.com/trusteddomainproject/OpenARC.git#commit=${_commit}"
         configure.ac.patch
 	openarc-headerdebug.patch
