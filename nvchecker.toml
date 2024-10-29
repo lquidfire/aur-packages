@@ -54,6 +54,14 @@ source = "github"
 github = "openbgpd-portable/openbgpd-portable"
 use_latest_tag = true
 
+[python-miltertest]
+source = "pypi"
+pypi = "miltertest"
+
+[python-pyalsaaudio]
+source = "pypi"
+pypi = "pyalsaaudio"
+
 [solfege]
 source = "regex"
 regex = "([\\d.]+\\.\\d+).tar.gz"
