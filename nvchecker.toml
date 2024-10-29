@@ -39,6 +39,16 @@ use_latest_release = true
 source = "github"
 github = "cs50/libcs50"
 
+[openarc]
+source = "github"
+github = "flowerysong/openarc"
+use_latest_release = true
+
+[openarc-git]
+source = "github"
+github = "flowerysong/openarc"
+use_commit = true
+
 [openbgpd]
 source = "github"
 github = "openbgpd-portable/openbgpd-portable"
