@@ -4,5 +4,6 @@
 # Whitelist:
 !.SRCINFO
 !.gitignore
+!/.nvchecker.toml
 !PKGBUILD
 !Makefile.patch

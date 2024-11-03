@@ -4,12 +4,6 @@ newver = "new_ver.json"
 keyfile = "keys.toml"
 
 
-
-[autorandr-git]
-source = "github"
-github = "phillipberndt/autorandr"
-use_commit = true
-
 [eid-mw]
 source = "regex"
 regex = "[\\d.]+\\.\\d*"
@@ -27,6 +21,11 @@ prefix = "release-"
 from_pattern = "(\\d+)_(\\d+)_(\\d+)"
 to_pattern = "\\1.\\2.\\3 "
 
+[gnubg-git]
+source = "git"
+git = "https://git.savannah.gnu.org/git/gnubg.git"
+use_commit = true
+
 [gnucobol]
 source = "regex"
 regex = "The current release, version [\\d.]+\\.\\d+"
@@ -37,6 +36,11 @@ source = "github"
 github = "gregorio-project/gregorio"
 use_latest_release = true
 
+[gtkglext]
+source = "regex"
+regex = "([\\d.]+\\.\\d+).tar.gz"
+url = "https://download.gnome.org/sources/gtkglext/1.2/"
+
 [libcs50]
 source = "github"
 github = "cs50/libcs50"
@@ -45,6 +49,11 @@ use_latest_release = true
 [libcs50-git]
 source = "github"
 github = "cs50/libcs50"
+
+[libstroke]
+source = "regex"
+regex = "([\\d.]+\\.\\d+).tar.gz"
+url = "https://sources.archlinux.org/other/packages/libstroke/"
 
 [openarc]
 source = "github"
