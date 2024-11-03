@@ -4,8 +4,9 @@
 # But not these files...
 !.gitignore
 !PKGBUILD
+!.nvchecker.toml
 !.SRCINFO
 !openarc.sysusers
 !openarc.tmpfiles
 !openarc.service
-!configure.ac.patch
+!*.patch
