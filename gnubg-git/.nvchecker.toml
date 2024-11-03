@@ -1,0 +1,5 @@
+[gnubg-git]
+source = "git"
+git = "https://git.savannah.gnu.org/git/gnubg.git"
+use_commit = true
+branch = "master"
