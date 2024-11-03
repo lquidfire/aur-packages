@@ -5,6 +5,11 @@ keyfile = "keys.toml"
 
 
 
+[autorandr-git]
+source = "github"
+github = "phillipberndt/autorandr"
+use_commit = true
+
 [eid-mw]
 source = "regex"
 regex = "[\\d.]+\\.\\d*"
@@ -16,9 +21,11 @@ github = "fvwmorg/fvwm"
 use_latest_release = true
 
 [gnubg]
-source = "regex"
-regex = "gnubg-release-([\\d.]+\\.\\d+)-sources.tar.gz."
-url = "https://www.gnu.org/software/gnubg/"
+source = "git"
+git = "https://git.savannah.gnu.org/git/gnubg.git"
+prefix = "release-"
+from_pattern = "(\\d+)_(\\d+)_(\\d+)"
+to_pattern = "\\1.\\2.\\3 "
 
 [gnucobol]
 source = "regex"
