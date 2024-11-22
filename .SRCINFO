@@ -1,7 +1,7 @@
-pkgbase = openarc-unofficial-patches-git
-	pkgdesc = OpenARC with patches and improvements from not-yet-merged PRs - by flowerysong
-	pkgver = 1.1.0.r17.g3ff4b07
-	pkgrel = 2
+pkgbase = openarc-git
+	pkgdesc = Open source implementation of the ARC email authentication system
+	pkgver = 1.2.0.r17.g3ff4b07
+	pkgrel = 1
 	url = https://github.com/flowerysong/OpenARC
 	arch = x86_64
 	license = BSD-2-Clause
@@ -27,10 +27,9 @@ pkgbase = openarc-unofficial-patches-git
 	source = openarc.service
 	source = openarc.sysusers
 	source = openarc.tmpfiles
-	validpgpkeys = 5CDD574C22FF4D2480ACABDF5254B96BC608B511
 	sha256sums = SKIP
 	sha256sums = d438b4a2e0ab5b247938213da7e8062fa5865e750e4f89d41471311edc163022
 	sha256sums = 31c399c0e3a69bb845b033ab5c0ad92d44cacb0fd58e0113cd1901e75900515e
 	sha256sums = a27619fe3bbea2a0fd7c555851089722b1d67818bc014d1dce20620b5eb4bbc5
 
-pkgname = openarc-unofficial-patches-git
+pkgname = openarc-git
