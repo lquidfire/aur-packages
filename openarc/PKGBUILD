@@ -1,17 +1,23 @@
 # Maintainer: Edmund Lodewijks <e.lodewijks at gmail.com>
 
+## NOTE: Since pkgver 1.2.0 this package builds from a new upstream!
+##	 The Trusted Domain Project has not updated OpenARC in years.
+##	 This AUR package now tracks flowerysong's fork, which is
+##	 currently maintained.
 pkgname=openarc
 pkgver=1.2.0
-pkgrel=1
-pkgdesc="OpenARC with patches from not-yet-merged PRs - by flowerysong"
+pkgrel=2
+pkgdesc="Open source implementation of the ARC email authentication system"
 arch=(x86_64)
 url="https://github.com/flowerysong/OpenARC"
 license=('BSD-2-Clause' 'LicenseRef-Sendmail-1.1')
 depends=('sh' 'glibc' 'jansson' 'openssl' 'libbsd' 'libidn2')
 optdepends=('smtp-server: for using a local mail server'
-	    'bind: required only for signature verification (alternatives available)')
+	    'bind: required only for signature verification (alternatives available)'
+	    'python: required for build, but also for "openarc-keygen"')
 makedepends=('git' 'python-miltertest' 'libmilter')
-conflicts=('openarc' 'openarc-unofficial-patches-git')
+conflicts=('openarc-git' 'openarc-unofficial-patches' 'openarc-unofficial-patches-git')
+replaces=('openarc') # Remove after pkgver 1.2.0-rel-1
 #source=("git+https://github.com/flowerysong/OpenARC.git#tag=${pkgver}"
 source=("https://github.com/flowerysong/OpenARC/releases/download/v${pkgver}/${pkgname}-${pkgver}.tar.gz"
         openarc.service
