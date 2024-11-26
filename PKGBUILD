@@ -4,9 +4,15 @@
 # Contributor: Sergej Pupykin <pupykin.s+arch@gmail.com>
 # Contributor: mutantmonkey <mutantmonkey@gmail.com>
 
+# This `libmilter` package differs from the one in Arch Linux repos
+# in that is is built with local CFLAGS and LDFLAGS;
+# it builds a shared library (libmilter.so) instead of a static archive;
+# and it installs the documentation.
+
 _origname=sendmail # libmilter is bundled with the sendmail source
 _pkgname=libmilter
 pkgname=libmilter-sharedlib
+pkgbase="${pkgname}"
 pkgver=8.18.1
 pkgrel=1
 pkgdesc='Implementation of the sendmail Mail Filter API'
