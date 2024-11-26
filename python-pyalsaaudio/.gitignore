@@ -1,7 +1,5 @@
 *
+!.gitignore
 !.nvchecker.toml
 !.SRCINFO
-!*.service
-!*.changelog
-!*.conf
 !PKGBUILD

@@ -4,7 +4,6 @@
 # But not these files...
 !.gitignore
 !/.nvchecker.toml
+!keys/pgp/*.asc
 !PKGBUILD
 !.SRCINFO
-!*.patch
-!Font-Exception-2.0

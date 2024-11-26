@@ -4,7 +4,6 @@ newver = "new_ver.json"
 keyfile = "keys.toml"
 
 
-
 [eid-mw]
 source = "regex"
 regex = "[\\d.]+\\.\\d*"
@@ -16,9 +15,16 @@ github = "fvwmorg/fvwm"
 use_latest_release = true
 
 [gnubg]
-source = "regex"
-regex = "gnubg-release-([\\d.]+\\.\\d+)-sources.tar.gz."
-url = "https://www.gnu.org/software/gnubg/"
+source = "git"
+git = "https://git.savannah.gnu.org/git/gnubg.git"
+prefix = "release-"
+from_pattern = "(\\d+)_(\\d+)_(\\d+)"
+to_pattern = "\\1.\\2.\\3 "
+
+[gnubg-git]
+source = "git"
+git = "https://git.savannah.gnu.org/git/gnubg.git"
+use_commit = true
 
 [gnucobol]
 source = "regex"
@@ -30,6 +36,11 @@ source = "github"
 github = "gregorio-project/gregorio"
 use_latest_release = true
 
+[gtkglext]
+source = "regex"
+regex = "([\\d.]+\\.\\d+).tar.gz"
+url = "https://download.gnome.org/sources/gtkglext/1.2/"
+
 [libcs50]
 source = "github"
 github = "cs50/libcs50"
@@ -39,10 +50,33 @@ use_latest_release = true
 source = "github"
 github = "cs50/libcs50"
 
+[libstroke]
+source = "regex"
+regex = "([\\d.]+\\.\\d+).tar.gz"
+url = "https://sources.archlinux.org/other/packages/libstroke/"
+
+[openarc]
+source = "github"
+github = "flowerysong/openarc"
+use_latest_release = true
+
+[openarc-git]
+source = "github"
+github = "flowerysong/openarc"
+use_commit = true
+
 [openbgpd]
 source = "github"
 github = "openbgpd-portable/openbgpd-portable"
 use_latest_tag = true
+
+[python-miltertest]
+source = "pypi"
+pypi = "miltertest"
+
+[python-pyalsaaudio]
+source = "pypi"
+pypi = "pyalsaaudio"
 
 [solfege]
 source = "regex"

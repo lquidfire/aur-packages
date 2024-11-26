@@ -1,0 +1,4 @@
+[openarc]
+source = "github"
+github = "flowerysong/OpenARC"
+use_latest_release = true
