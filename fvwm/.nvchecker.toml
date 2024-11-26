@@ -1,4 +1,0 @@
-[fvwm]
-source = "github"
-github = "fvwmorg/fvwm"
-use_latest_release = true

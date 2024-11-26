@@ -1,4 +1,0 @@
-[gnucobol]
-source = "regex"
-regex = "The current release, version ([\\d.]+)."
-url = "https://gnucobol.sourceforge.io/"

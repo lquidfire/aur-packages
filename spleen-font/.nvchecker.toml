@@ -1,4 +1,0 @@
-[spleen-font]
-source = "github"
-github = "fcambus/spleen"
-use_latest_release = true

@@ -1,8 +1,0 @@
-*
-!.gitignore
-!.nvchecker.toml
-!*.service
-!*.sysusers
-!*.tmpfiles
-!PKGBUILD
-!.SRCINFO

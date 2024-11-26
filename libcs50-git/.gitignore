@@ -1,9 +1,0 @@
-# Blacklist:
-*
-
-# Whitelist:
-!.gitignore
-!/.nvchecker.toml
-!PKGBUILD
-!.SRCINFO
-!Makefile.patch

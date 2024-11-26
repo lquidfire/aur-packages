@@ -1,4 +1,0 @@
-[gregorio]
-source = "github"
-github = "gregorio-project/gregorio"
-use_latest_release = true
