@@ -1,0 +1,4 @@
+[libmilter_checks-sendmail]
+source = "regex"
+regex = "(\\d+\\.\\d+\\.\\d+)"
+url = "https://www.proofpoint.com/us/products/email-protection/open-source-email-solution"

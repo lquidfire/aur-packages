@@ -1,0 +1,10 @@
+*
+!.gitignore
+!.nvchecker.toml
+!*.service
+!*.sysusers
+!*.tmpfiles
+!*.patch
+!/keys/*
+!PKGBUILD
+!.SRCINFO
