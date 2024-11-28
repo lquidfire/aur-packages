@@ -1,0 +1,10 @@
+# Blacklist
+*
+
+# Whitelist:
+!.SRCINFO
+!.gitignore
+!.nvchecker.toml
+!PKGBUILD
+!*.patch
+!site.config.m4
