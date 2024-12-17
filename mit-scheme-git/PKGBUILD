@@ -1,18 +1,20 @@
-# Maintainer: Stefan Husmann <stefan-husmann@t-online.de>
+# Maintainer: Edmund Lodewijks <tph@theperfecthobbit.com>
+# Contributor: Stefan Husmann <stefan-husmann@t-online.de>
 
 pkgname=mit-scheme-git
-pkgver=13.0.50.r18718.6afb904d359
+pkgver=13.0.50.r18935.4809da2af
 pkgrel=1
 pkgdesc="MIT/GNU Scheme from git"
 arch=('i686' 'x86_64')
-url="http://www.gnu.org/software/mit-scheme/"
-license=('GPL')
-depends=('mhash' 'libmcrypt' 'ncurses' 'libx11' 'postgresql-libs' 'termcap')
+url="https://www.gnu.org/software/mit-scheme/"
+license=('GPL-2.0-or-later')
+depends=('ncurses' 'libx11')
 optdepends=('openssl: support for openssl')
-makedepends=('git' 'mit-scheme' 'texlive-latex')
+makedepends=('git' 'texlive-latex')
 provides=('mit-scheme')
 conflicts=('mit-scheme')
-source=("git+http://git.savannah.gnu.org/r/mit-scheme.git")
+#source=("git+https://git.savannah.gnu.org/r/mit-scheme.git")
+source=("git+https://git.savannah.gnu.org/git/mit-scheme.git#branch=master")
 md5sums=('SKIP')
 options=('!makeflags')
 
