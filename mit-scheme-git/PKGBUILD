@@ -3,20 +3,19 @@
 
 pkgname=mit-scheme-git
 pkgver=13.0.50.r18935.4809da2af
-pkgrel=1
+pkgrel=2
 pkgdesc="MIT/GNU Scheme from git"
 arch=('i686' 'x86_64')
 url="https://www.gnu.org/software/mit-scheme/"
 license=('GPL-2.0-or-later')
 depends=('ncurses' 'libx11')
 optdepends=('openssl: support for openssl')
-makedepends=('git' 'texlive-latex')
+makedepends=('git' 'mit-scheme' 'texlive-latex')
 provides=('mit-scheme')
 conflicts=('mit-scheme')
-#source=("git+https://git.savannah.gnu.org/r/mit-scheme.git")
-source=("git+https://git.savannah.gnu.org/git/mit-scheme.git#branch=master")
+source=("git+https://git.savannah.gnu.org/git/mit-scheme.git")
 md5sums=('SKIP')
-options=('!makeflags')
+#options=('!makeflags')
 
 pkgver() {
   cd ${pkgname%-git}/src

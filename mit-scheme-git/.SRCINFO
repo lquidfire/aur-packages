@@ -1,20 +1,20 @@
 pkgbase = mit-scheme-git
 	pkgdesc = MIT/GNU Scheme from git
 	pkgver = 13.0.50.r18935.4809da2af
-	pkgrel = 1
+	pkgrel = 2
 	url = https://www.gnu.org/software/mit-scheme/
 	arch = i686
 	arch = x86_64
 	license = GPL-2.0-or-later
 	makedepends = git
+	makedepends = mit-scheme
 	makedepends = texlive-latex
 	depends = ncurses
 	depends = libx11
 	optdepends = openssl: support for openssl
 	provides = mit-scheme
 	conflicts = mit-scheme
-	options = !makeflags
-	source = git+https://git.savannah.gnu.org/git/mit-scheme.git#branch=master
+	source = git+https://git.savannah.gnu.org/git/mit-scheme.git
 	md5sums = SKIP
 
 pkgname = mit-scheme-git

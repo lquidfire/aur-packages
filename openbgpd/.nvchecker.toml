@@ -1,4 +1,0 @@
-[openbgpd]
-source = "github"
-github = "openbgpd-portable/openbgpd-portable"
-use_latest_release = true
