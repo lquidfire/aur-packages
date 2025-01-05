@@ -1,0 +1,4 @@
+[deltarpm]
+source = "github"
+github = "rpm-software-management/deltarpmi"
+use_latest_tag = true
