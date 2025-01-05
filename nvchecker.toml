@@ -4,6 +4,11 @@ newver = "new_ver.json"
 keyfile = "keys.toml"
 
 
+[deltarpm]
+source = "github"
+github = "rpm-software-management/deltarpm"
+use_latest_tag = true
+
 [eid-mw]
 source = "regex"
 regex = "[\\d.]+\\.\\d*"
