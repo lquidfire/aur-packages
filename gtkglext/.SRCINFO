@@ -1,11 +1,12 @@
 pkgbase = gtkglext
 	pkgdesc = An OpenGL extension to GTK2.
 	pkgver = 1.2.0
-	pkgrel = 20
+	pkgrel = 21
 	url = https://gitlab.gnome.org/Archive/gtkglext
 	arch = x86_64
 	license = LGPL-2.0-or-later
 	makedepends = glib2-devel
+	depends = glibc
 	depends = glib2
 	depends = pango
 	depends = gtk2
